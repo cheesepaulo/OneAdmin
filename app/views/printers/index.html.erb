@@ -1,2 +1,47 @@
-<h1>Printers#index</h1>
-<p>Find me in app/views/printers/index.html.erb</p>
+<h1 class="page-header"><%= @printers.model_name.human(count: 2) %></h1>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <%= t('messages.listing', model: @printers.model_name.human(count: 2)) %>
+    <%= link_to new_printer_path, class: "btn btn-success btn-circle pull-right",
+        style: "margin-top: -5px" do %>
+      <i class="fa fa-plus"></i>
+    <% end %>
+  </div>
+  <div class="panel-body">
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Nome</th>
+            <th>Departamento</th>
+            <th>Tipo</th>
+            <th>IP</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% count = 0 %>
+          <% @printers.each do |printer| %>
+            <tr>
+              <td> <%= count += 1 %> </td>
+              <td> <%= printer.name %> </td>
+              <td> <%= printer.department.name %></td>
+              <td> <%= printer.kind_i18n %></td>
+              <td> <%= printer.ip_address %></td>
+              <td style="width: 150px">
+                <%= link_to edit_printer_path(printer), class: "btn btn-primary btn-circle" do %>
+                  <i class="fa fa-edit"></i>
+                <% end %>
+                <button type="button" disabled="disabled" class="btn btn-danger btn-circle">
+                  <i class="fa fa-minus"></i>
+                </button>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -7,6 +7,9 @@
       user:
         one: Usuário
         other: Usuários
+      printer:
+        one: Impressora
+        other: Impressoras
     attributes:
       department:
         name: Nome
@@ -14,3 +17,9 @@
         name: Nome
         email: Email
         role: Tipo de Acesso
+      printer:
+        name: Nome
+        ip_address: Endereço IP
+        department: Departamento
+        kind: Tipo
+        leased: Alugada

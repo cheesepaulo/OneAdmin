@@ -4,3 +4,10 @@ pt-BR:
       role:
         full_access: Acesso Completo
         restricted_access: Acesso Restrito
+    printer:
+      kind:
+        inkjet: Jato de Tinta
+        laser: Laser
+      status:
+        active: Ativa
+        inactive: Desativada
