@@ -10,8 +10,8 @@ class DepartmentsController < ApplicationController
   end
 
   def create
-    @department = Department.new(params_department)
-    if @department.save
+    @department = DepartmentService.create(params_department)
+    unless @department.errors.any?
       redirect_to departments_path, notice: "O departamento #{@department.name} foi criado com sucesso!"
     else
       render :new
