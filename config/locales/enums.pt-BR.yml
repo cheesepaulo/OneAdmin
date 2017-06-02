@@ -11,3 +11,7 @@ pt-BR:
       status:
         active: Ativa
         inactive: Desativada
+    cartridge:
+        kind:
+          original: Original
+          recharged: Recarregado

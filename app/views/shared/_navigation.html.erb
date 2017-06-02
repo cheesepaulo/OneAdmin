@@ -34,19 +34,32 @@
         <% end %>
       </li>
       <li>
-        <%= link_to departments_path do %>
-        <i class="fa fa-building-o fa-fw"></i> Departamentos
+        <%= link_to "#" do %>
+        <i class="fa fa-file-text-o fa-fw"></i> Impressão
+        <span class="fa arrow"></span>
         <% end %>
-      </li>
-      <li>
-        <%= link_to printers_path do %>
-        <i class="fa fa-print fa-fw"></i> Impressoras
-        <% end %>
-      </li>
-      <li>
-        <%= link_to users_path do %>
-        <i class="fa fa-users fa-fw"></i> Usuários
-        <% end %>
+        <ul class="nav nav-second-level collapse">
+          <li>
+            <%= link_to printers_path do %>
+            <i class="fa fa-print fa-fw"></i> Impressoras
+            <% end %>
+          </li>
+          <li>
+            <%= link_to cartridges_path do %>
+            <i class="fa fa-circle fa-fw"></i> Cartuchos
+            <% end %>
+          </li>
+        </ul>
+        <li>
+          <%= link_to users_path do %>
+          <i class="fa fa-users fa-fw"></i> Usuários
+          <% end %>
+        </li>
+        <li>
+          <%= link_to departments_path do %>
+          <i class="fa fa-building-o fa-fw"></i> Departamentos
+          <% end %>
+        </li>
       </li>
     </ul>
   </div>

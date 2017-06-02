@@ -16,6 +16,9 @@ Rails.application.routes.draw do
   # Printers
   resources :printers, except: :show
 
+  # Cartridges
+  resources :cartridges, except: :show
+
   # Users
   resources :users, except: :show
 

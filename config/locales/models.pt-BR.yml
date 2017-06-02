@@ -10,6 +10,9 @@
       printer:
         one: Impressora
         other: Impressoras
+      cartridge:
+        one: Cartucho
+        other: Cartuchos
     attributes:
       department:
         name: Nome
@@ -23,3 +26,6 @@
         department: Departamento
         kind: Tipo
         leased: Alugada
+      cartridge:
+        name: Nome
+        kind: Tipo

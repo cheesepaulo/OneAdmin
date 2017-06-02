@@ -4,5 +4,5 @@ class Printer < ApplicationRecord
   enum kind: [:laser, :inkjet]
   enum status: [:active, :inactive]
 
-  validates_presence_of :name, :ip_address, :status
+  validates_presence_of :name, :ip_address, :status, :kind
 end
