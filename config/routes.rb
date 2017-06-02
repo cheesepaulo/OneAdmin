@@ -1,16 +1,17 @@
 Rails.application.routes.draw do
 
-    root 'home#index'
+  root 'home#index'
 
-    # Home
-    get '/', to: 'home#index'
+  # Devise
+  devise_for :users, :skip => [:registrations]
 
-    # Departments
-    resources :departments, except: :show
+  # Home
+  get '/', to: 'home#index'
 
-    # Users
-    resources :users, except: :show
+  # Departments
+  resources :departments, except: :show
 
-    # Devise
-    devise_for :users, :skip => [:registrations]
-  end
+  # Users
+  resources :users, except: :show
+
+end

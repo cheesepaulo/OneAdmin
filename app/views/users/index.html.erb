@@ -1,0 +1,53 @@
+<h1 class="page-header">Listando Usuários</h1>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    Usuários
+    <%= link_to new_user_path, class: "btn btn-success btn-circle pull-right",
+    style: "margin-top: -5px" do %>
+    <i class="fa fa-plus"></i>
+    <% end %>
+  </div>
+  <div class="panel-body">
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Permissão</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% count = 0 %>
+          <% @users.each do |user| %>
+            <tr>
+              <td> <%= count += 1 %> </td>
+              <td> <%= user.name %>  </td>
+              <td> <%= user.email %> </td>
+              <td> <%= user.kind  %> </td>
+              <td style="width: 150px">
+                <%= link_to edit_user_path(user), class: "btn btn-primary btn-circle" do %>
+                  <i class="fa fa-edit"></i>
+                <% end %>
+
+                <% if current_user.id != user.id %>
+                  <%= link_to user_path(user), class: "btn btn-danger btn-circle",
+                  method: :delete, data: {confirm: "Você deseja realmente excluir #{user.email} ?"} do %>
+                    <i class="fa fa-minus"></i>
+                  <% end %>
+                <% else %>
+                  <%= link_to '#', class: "btn btn-danger btn-circle", disabled: "disabled" do %>
+                    <i class="fa fa-minus"></i>
+                  <% end %>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
