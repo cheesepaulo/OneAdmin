@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'printers/index'
+
   root 'home#index'
 
   # Devise
@@ -10,6 +12,9 @@ Rails.application.routes.draw do
 
   # Departments
   resources :departments, except: :show
+
+  # Printers
+  resources :printers, except: :show
 
   # Users
   resources :users, except: :show
