@@ -38,6 +38,7 @@ gem 'enum_help', '~> 0.0.17'
 gem 'pundit', '~> 1.1'
 # Beauty confirm dialogs
 gem 'rails-assets-bootbox', source: 'https://rails-assets.org'
+# JS notifications
 gem 'rails-assets-notifyjs', source: 'https://rails-assets.org'
 
 group :test do
