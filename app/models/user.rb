@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  enum kind: [:full_access, :restricted_accesss]
+  enum role: [:full_access, :restricted_accesss]
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
