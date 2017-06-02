@@ -12,8 +12,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params_user)
     if @user.save
-      flash[:notice] = "Usuário salvo com sucesso!"
-      redirect_to users_path
+      redirect_to users_path, notice: "Usuário salvo com sucesso!"
     else
       render :new
     end
@@ -26,8 +25,7 @@ class UsersController < ApplicationController
     remove_password_if_not_present
 
     if @user.update(params_user)
-      flash[:notice] = "Usuário atualizado com sucesso!"
-      redirect_to users_path
+      redirect_to users_path, notice: "Usuário atualizado com sucesso!"
     else
       render :edit
     end
@@ -35,8 +33,7 @@ class UsersController < ApplicationController
 
   def destroy
     if @user.destroy
-      flash[:notice] = "Usuário excluído com sucesso!"
-      redirect_to users_path
+      redirect_to users_path, notice: "Usuário excluído com sucesso!"
     else
       render :index
     end

@@ -32,14 +32,13 @@ gem 'devise', '~> 4.2', '>= 4.2.1'
 gem 'devise-i18n', '~> 1.1', '>= 1.1.2'
 # SB Admin 2 is an open source, admin dashboard template for Bootstrap created by Start Bootstrap.
 gem 'bootstrap_sb_admin_base_v2', '~> 0.3.5'
-# Add toastr js library and use replace ugly bootstrap flash messages
-gem 'toastr_rails'
 # Help ActiveRecord::Enum feature to work fine with I18n and simple_form.
 gem 'enum_help', '~> 0.0.17'
 # Object oriented authorization for Rails applications
 gem 'pundit', '~> 1.1'
 # Beauty confirm dialogs
 gem 'rails-assets-bootbox', source: 'https://rails-assets.org'
+gem 'rails-assets-notifyjs', source: 'https://rails-assets.org'
 
 group :test do
   gem 'shoulda-matchers', git: 'https://github.com/thoughtbot/shoulda-matchers.git', branch: 'rails-5'
