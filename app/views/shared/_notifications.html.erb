@@ -1,5 +1,11 @@
 <% if notice %>
   <script type="text/javascript">
-    $.notify("<%= notice %>", { position:"top-center", className: 'success' });
+    $.notify("<%= notice %>", { globalPosition: "top center", className: 'success' });
+  </script>
+<% end %>
+
+<% if alert %>
+  <script type="text/javascript">
+    $.notify("<%= alert %>", { globalPosition: "top center", className: 'error' });
   </script>
 <% end %>

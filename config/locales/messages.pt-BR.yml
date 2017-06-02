@@ -9,3 +9,4 @@
     created: Item criado com sucesso!
     updated: Item atualizado com sucesso!
     destroyed: Item removido com sucesso!
+    denied: Você não está autorizado a executar essa ação!

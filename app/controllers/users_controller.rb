@@ -1,12 +1,15 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:edit, :update, :destroy]
+  after_action :verify_authorized, only: :new
+  after_action :verify_policy_scoped, only: :index
 
   def index
-    @users = User.all
+    @users = policy_scope(User)
   end
 
   def new
     @user = User.new
+    authorize @user
   end
 
   def create
@@ -55,7 +58,7 @@ class UsersController < ApplicationController
     passwd_confirmation = params[:password_confirmation]
 
     if passwd.blank? && passwd_confirmation.blank?
-      params[:user] = params[:user].except(:password, :password_confirmation)
+      params[:user].except!(:password, :password_confirmation)
     end
   end
 end
