@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  enum role: [:full_access, :restricted_accesss]
+  enum role: [:full_access, :restricted_access]
 
   scope :with_full_access, -> { where(role: 'full_access')}
   scope :with_restricted_access, -> { where(role: 'restricted_accesss')}

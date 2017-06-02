@@ -1,8 +1,8 @@
-<h1 class="page-header">Usuários</h1>
+<h1 class="page-header"><%= @users.model_name.human(count: 2) %></h1>
 
 <div class="panel panel-default">
   <div class="panel-heading">
-    Listando usuários
+    <%= t('messages.listing', model: @users.model_name.human(count: 2)) %>
     <%= link_to new_user_path, class: "btn btn-success btn-circle pull-right",
     style: "margin-top: -5px" do %>
     <i class="fa fa-plus"></i>
@@ -14,10 +14,10 @@
         <thead>
           <tr>
             <th>#</th>
-            <th>Nome</th>
-            <th>Email</th>
-            <th>Tipo de Acesso</th>
-            <th>Ações</th>
+            <th><%= @users.model.human_attribute_name('name') %></th>
+            <th><%= @users.model.human_attribute_name('email')%></th>
+            <th><%= @users.model.human_attribute_name('role')%></th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -27,7 +27,7 @@
               <td> <%= count += 1 %> </td>
               <td> <%= user.name %>  </td>
               <td> <%= user.email %> </td>
-              <td> <%= user.role  %> </td>
+              <td> <%= user.role_i18n  %> </td>
               <td style="width: 150px">
                 <%= link_to edit_user_path(user), class: "btn btn-primary btn-circle" do %>
                   <i class="fa fa-edit"></i>
@@ -35,7 +35,7 @@
 
                 <% if current_user.id != user.id %>
                   <%= link_to user_path(user), class: "btn btn-danger btn-circle",
-                  method: :delete, data: {confirm: "Você deseja realmente excluir #{user.name} ?"} do %>
+                  method: :delete, data: {confirm: t('messages.confirm_with', item: user.name)} do %>
                     <i class="fa fa-minus"></i>
                   <% end %>
                 <% else %>

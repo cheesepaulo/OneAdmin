@@ -1,0 +1,16 @@
+'pt-BR':
+  activerecord:
+    models:
+      department:
+        one: Departamento
+        other: Departamentos
+      user:
+        one: Usuário
+        other: Usuários
+    attributes:
+      department:
+        name: Nome
+      user:
+        name: Nome
+        email: Email
+        role: Tipo de Acesso
