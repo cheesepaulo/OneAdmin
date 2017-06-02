@@ -1,9 +1,9 @@
 FactoryGirl.define do
   factory :printer do
-    name "MyString"
-    kind 1
-    ip_address "MyString"
-    status 1
-    department nil
+    name FFaker::Lorem.word
+    kind { rand(0..1) }
+    ip_address FFaker::Internet::ip_v4_address
+    status { rand(0..1) }
+    department
   end
 end

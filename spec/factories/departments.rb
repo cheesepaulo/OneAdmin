@@ -1,5 +1,5 @@
 FactoryGirl.define do
   factory :department do
-    name "MyString"
+    name FFaker::Company::position
   end
 end

@@ -1,5 +1,5 @@
 class Printer < ApplicationRecord
-  validates_presence_of :name, :kind, :status, :leased
+  validates_presence_of :name, :kind, :status, :department
   belongs_to :department
 
   enum kind: [:laser, :inkjet]
