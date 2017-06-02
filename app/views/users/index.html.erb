@@ -1,8 +1,8 @@
-<h1 class="page-header">Listando Usuários</h1>
+<h1 class="page-header">Usuários</h1>
 
 <div class="panel panel-default">
   <div class="panel-heading">
-    Usuários
+    Listando usuários
     <%= link_to new_user_path, class: "btn btn-success btn-circle pull-right",
     style: "margin-top: -5px" do %>
     <i class="fa fa-plus"></i>
@@ -35,7 +35,7 @@
 
                 <% if current_user.id != user.id %>
                   <%= link_to user_path(user), class: "btn btn-danger btn-circle",
-                  method: :delete, data: {confirm: "Você deseja realmente excluir #{user.email} ?"} do %>
+                  method: :delete, data: {confirm: "Você deseja realmente excluir #{user.name} ?"} do %>
                     <i class="fa fa-minus"></i>
                   <% end %>
                 <% else %>

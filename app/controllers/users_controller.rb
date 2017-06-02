@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params_user)
     if @user.save
-      redirect_to users_path, notice: "Usuário salvo com sucesso!"
+      redirect_to users_path, notice: "O usuario #{@user.name} foi criado com sucesso!"
     else
       render :new
     end
@@ -25,15 +25,16 @@ class UsersController < ApplicationController
     remove_password_if_not_present
 
     if @user.update(params_user)
-      redirect_to users_path, notice: "Usuário atualizado com sucesso!"
+      redirect_to users_path, notice: "O usuario #{@user.name} foi atualizado com sucesso!"
     else
       render :edit
     end
   end
 
   def destroy
+    user_name = @user.name
     if @user.destroy
-      redirect_to users_path, notice: "Usuário excluído com sucesso!"
+      redirect_to users_path, notice: "O usuario #{user_name} foi excluído com sucesso!"
     else
       render :index
     end

@@ -12,7 +12,7 @@ class DepartmentsController < ApplicationController
   def create
     @department = Department.new(params_department)
     if @department.save
-      redirect_to departments_path, notice: "Departamento salvo com sucesso!"
+      redirect_to departments_path, notice: "O departamento #{@department.name} foi criado com sucesso!"
     else
       render :new
     end
@@ -23,7 +23,7 @@ class DepartmentsController < ApplicationController
 
   def update
     if @department.update(params_department)
-      redirect_to departments_path, notice: "Departamento atualizado com sucesso!"
+      redirect_to departments_path, notice: "O departamento #{@department.name} foi atualizado com sucesso!"
     else
       render :edit
     end
